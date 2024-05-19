@@ -1,19 +1,38 @@
-<head>
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-
-<body>
-    <div class="App">
-        <header class="App-header">
-            <img src="{{ url_for('static', filename='Octocat.png') }}" class="App-logo" alt="logo" />
-            <p>
-                GitHub Codespaces <span class="heart">♥️</span> Flask
-            </p>
-            <p class="small">
-                Edit <code>templates/index.html</code> and refresh to see your changes!
-            </p>
-        </header>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Upload File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .upload {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .upload h2 {
+            margin-top: 0;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="upload">
+        <h2>Upload an audio file for transcription</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <input type="file" name="file" accept="audio/*">
+          <button type="submit">Upload</button>
+        </form>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
